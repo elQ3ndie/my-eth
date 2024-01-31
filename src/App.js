@@ -13,7 +13,7 @@ async function withdraw() {
     await requestAccount();
     const provider = new ethers.BrowserProvider(window.ethereum);
     const signer = await provider.getSigner();
-    const contract = new ethers.Contract('0x54210cA1471b1064df6C525B5980a68361E5129e', contract_ABI, signer);
+    const contract = new ethers.Contract('0x54210cA1471b1064df6C525B5980a68361E5129e', contract_ABI.abi, signer);
 
     try {
       const transaction = await contract.withdraw();
